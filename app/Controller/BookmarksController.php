@@ -21,23 +21,24 @@
 		function add2()
 		{
 			if($this->request->is('post')){
-				// $this->Bookmark->create();
-				// if($this->Bookmark->save($this->request->data)){
-				// 	$this-> Session -> setFlash('success saved!');
-				// 	$this->redirect(array('action' => 'index'));
-				// }else {
-				// 	$this->Session->setFlash('save failed');
-				// }
-
-				$b = $this->Bookmark->new();
-				$b['url'] = $this->request->data['url'];
-				$b['host'] = $this->request->data['host'];
-				$b['description'] = $this->request->data['description'];
-				if($b -> save()){
+				$this->Bookmark->create();
+				$this->Bookmark->set('scan_count', 100);
+				if($this->Bookmark->save($this->request->data)){
+					$this-> Session -> setFlash('success saved!');
 					$this->redirect(array('action' => 'index'));
-				}else{
+				}else {
 					$this->Session->setFlash('save failed');
 				}
+
+				// $b = $this->Bookmark->new();
+				// $b['url'] = $this->request->data['url'];
+				// $b['host'] = $this->request->data['host'];
+				// $b['description'] = $this->request->data['description'];
+				// if($b -> save()){
+				// 	$this->redirect(array('action' => 'index'));
+				// }else{
+				// 	$this->Session->setFlash('save failed');
+				// }
 
 			}
 		}
