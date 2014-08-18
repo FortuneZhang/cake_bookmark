@@ -8,7 +8,7 @@
 		<th>like_count</th>
 		<th>scan_count</th>
 	</thead>
-	<?php print_r($bookmarks) ?>
+
 	<?php foreach ($bookmarks as $bookmark): ?>
 		<tr>
 			<td>
@@ -34,5 +34,6 @@
 			</td>
 
 		</tr>
-	<<?php endforeach ?>	
+	<?php endforeach ?>	
 </table>
+<?php echo $this->Html->link('add', array('action' => 'add' ), array('class' => 'button')) ?>
