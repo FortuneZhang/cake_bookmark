@@ -15,10 +15,10 @@
 				<?php echo $bookmark['Bookmark']['id'] ?>
 			</td>
 			<td>
-				<?php echo $bookmark['Bookmark']['host'] ?>
+				<?php echo $this->Html->link($bookmark['Bookmark']['host'], $bookmark['Bookmark']['host'], array('target' => '_blank', )) ?>
 			</td>
 			<td>
-				<?php echo $this->Text->truncate($bookmark['Bookmark']['url'], 64) ?>
+				<?php echo $this->Html->link($this->Text->truncate($bookmark['Bookmark']['url'], 64), $bookmark['Bookmark']['url'], array('target' => '_blank') ) ?>
 			</td>
 			<td>
 				<?php echo $bookmark['Bookmark']['description'] ?>

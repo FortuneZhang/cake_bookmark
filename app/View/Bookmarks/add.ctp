@@ -16,7 +16,7 @@
 	function finish_input_url_then_update_host(me){
 		var url = $(me).val();
 		var link = Url.build_a(url);
-		$('#host').val(link.host); 
+		$('#host').val(link.origin); 
 	}
 
 
