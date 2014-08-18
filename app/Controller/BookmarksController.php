@@ -14,11 +14,7 @@
 			$this->set('bookmarks', $bookmarks);
 		}		
 
-		function add(){
-
-		}
-
-		function add2()
+		function add()
 		{
 			if($this->request->is('post')){
 				$this->Bookmark->create();
@@ -29,17 +25,6 @@
 				}else {
 					$this->Session->setFlash('save failed');
 				}
-
-				// $b = $this->Bookmark->new();
-				// $b['url'] = $this->request->data['url'];
-				// $b['host'] = $this->request->data['host'];
-				// $b['description'] = $this->request->data['description'];
-				// if($b -> save()){
-				// 	$this->redirect(array('action' => 'index'));
-				// }else{
-				// 	$this->Session->setFlash('save failed');
-				// }
-
 			}
 		}
 
