@@ -18,7 +18,7 @@
 				<?php echo $bookmark['Bookmark']['host'] ?>
 			</td>
 			<td>
-				<?php echo $bookmark['Bookmark']['url'] ?>
+				<?php echo $this->Text->truncate($bookmark['Bookmark']['url'], 64) ?>
 			</td>
 			<td>
 				<?php echo $bookmark['Bookmark']['description'] ?>
