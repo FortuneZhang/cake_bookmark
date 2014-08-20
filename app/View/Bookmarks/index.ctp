@@ -37,3 +37,4 @@
 	<?php endforeach ?>	
 </table>
 <?php echo $this->Html->link('add', array('action' => 'add' ), array('class' => 'button')) ?>
+<?php echo ' total:' . $count . ' ' ?>

@@ -12,6 +12,7 @@
 					array('order' => 'Bookmark.id DESC')
 				);
 			$this->set('bookmarks', $bookmarks);
+			$this->set('count', $this->Bookmark->get_count());
 		}		
 
 		function add()
