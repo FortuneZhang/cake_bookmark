@@ -6,8 +6,9 @@
 	{
 		public $helpers = array('Session');
 		public $components = array('Session');
+		public $uses = array('Bookmark', 'Tag');
 
-		function index(){
+		public function index(){
 			$bookmarks = $this->Bookmark->find('all', 
 					array('order' => 'Bookmark.id DESC')
 				);
@@ -21,6 +22,12 @@
 				$this->Bookmark->create();
 				$this->Bookmark->set('scan_count', 100);
 				if($this->Bookmark->save($this->request->data)){
+					$tags_string = $this->request->data['tags'];
+
+					if(! empty($tags_string)){
+						$this->log('tags_string', $tags_string);
+						$this->Tag->save_new(split(',', $tags_string));
+					}
 					$this-> Session -> setFlash('success saved!');
 					$this->redirect(array('action' => 'index'));
 				}else {
